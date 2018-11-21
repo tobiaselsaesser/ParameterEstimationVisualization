@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1029</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,8 +15,40 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="2" column="0">
      <widget class="QGraphicsView" name="graphicsView"/>
+    </item>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QWidget" name="widget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Parameter 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Parameter 2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="mpParameter1"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="mpParmeter2"/>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -25,8 +57,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
-     <height>21</height>
+     <width>1029</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -47,6 +79,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpen"/>
+   <addaction name="actionUpdate"/>
    <addaction name="separator"/>
    <addaction name="actionE_xit"/>
   </widget>
@@ -65,6 +98,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="text">
+    <string>Update</string>
    </property>
   </action>
  </widget>
@@ -103,8 +141,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionUpdate</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotFileOpen()</slot>
+  <slot>slotUpdate()</slot>
  </slots>
 </ui>

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include <vector>
+
 namespace Ui {
 class MainWindow;
 }
@@ -23,8 +25,12 @@ public:
 
 public slots:
     void slotFileOpen();
+	void slotUpdate();
 
 private:
+	int mParam1;
+	int mParam2;
+	std::vector<ResultData*> mData;
   Ui::MainWindow *ui;
 };
 

@@ -2,12 +2,15 @@
 #include <QApplication>
 #include <QFile>
 #include <QString>
-
+#include <iostream>
+int parametersetA, parametersetB;
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+	std::cin >> parametersetA;
+	std::cin >> parametersetA;
+	QApplication a(argc, argv);
     MainWindow w;
-
+	
     for (int i = 1; i < argc; ++i)
     {
         QString current(argv[i]);
@@ -17,6 +20,6 @@ int main(int argc, char *argv[])
     }
 
     w.show();
-
+	
     return a.exec();
 }
